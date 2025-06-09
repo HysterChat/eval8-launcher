@@ -22,7 +22,7 @@ jobs:
       
     - name: Build and Sign
       env:
-        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        GH_TOKEN: ${{ secrets.RELEASE_TOKEN }}
       run: npm run build
       
     - name: Upload artifacts
