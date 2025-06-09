@@ -1,0 +1,42 @@
+{
+  "name": "eval8-launcher",
+  "version": "1.0.0",
+  "description": "Secure launcher and updater for Eval8",
+  "main": "main.js",
+  "scripts": {
+    "start": "electron .",
+    "build": "electron-builder",
+    "sign": "electron-builder -w --win"
+  },
+  "build": {
+    "appId": "com.eval8.launcher",
+    "productName": "Eval8 Launcher",
+    "win": {
+      "target": ["nsis"],
+      "icon": "assets/icon.ico",
+      "signingHashAlgorithms": ["sha256"],
+      "publisherName": "HysterChat",
+      "verifyUpdateCodeSignature": true
+    },
+    "nsis": {
+      "oneClick": true,
+      "perMachine": false
+    },
+    "publish": {
+      "provider": "github",
+      "owner": "HysterChat",
+      "repo": "eval8"
+    }
+  },
+  "author": "HysterChat",
+  "license": "ISC",
+  "devDependencies": {
+    "electron": "^28.2.0",
+    "electron-builder": "^24.9.1"
+  },
+  "dependencies": {
+    "axios": "^1.6.7",
+    "electron-log": "^5.0.1",
+    "electron-store": "^8.1.0"
+  }
+} 
